@@ -1,9 +1,6 @@
 #lang racket
 
-;Gerard Naughton G00209309 Theory of Algotithms
-;Task 1
-
-;Write, from scratch, a function in Racket that uses a brute-force algorithm that takes
+; Task 1. Write, from scratch, a function in Racket that uses a brute-force algorithm that takes
 ;a single positive integer and return true if the number is a prime and false otherwise.
 ;Call the function decide-prime
 ;What is a prime?
@@ -20,6 +17,4 @@
 (decide-prime? 6)
 
 (decide-prime? 11)
-
-;result should be #t #f #t in that order
 
