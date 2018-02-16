@@ -1,4 +1,4 @@
-# Task 1 Decide-prime
+# Task 2 Collatz-list
 
 ## Decide Prime
 
