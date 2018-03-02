@@ -1,7 +1,5 @@
 # Task 2 Collatz-list
 
-## Decide Prime
-
 ## Objective
 Provided from our Lecturer Ian Mcloughlin
 
@@ -9,7 +7,18 @@ Provided from our Lecturer Ian Mcloughlin
 
 ## Algorithm
 
+Collatz conjecture in mathamatics concerns a sequence defined as follows:
 
+* Start with any positive integer n
+* if n is positive divide n by 2
+* if n is negative multiply n by 3 and add 1
+* repeat this sequence until n becomes 1
+
+The conjecture is that no matter what value n is the sequence will always reach 1.
+
+Here is the function:
+
+<p><img src="Images/function.png" width="500" length="300"></p>
 
 ## Solution
 
@@ -27,4 +36,8 @@ Provided from our Lecturer Ian Mcloughlin
 
 ## Conclusion
 
+This is the first task where we used recursion and we can see how very powerful it is. We will be using this alot in the future tasks.
+
 ## References
+
+https://en.wikipedia.org/wiki/Collatz_conjecture

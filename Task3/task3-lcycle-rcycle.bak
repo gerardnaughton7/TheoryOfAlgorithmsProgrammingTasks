@@ -21,17 +21,12 @@
         '() 
         (cons (car l) (removeLast (cdr l))))) ;otherwise keep adding till list
 
-; Function removes last element in a list Adapted from: https://stackoverflow.com/questions/5006750/removing-last-element-of-a-listscheme
-(define (getLast l)
-  (cond ((null? (cdr l)) (car l))
-        (else (getLast (cdr l)))))
-
 ; rcycle function that shifts the list cyclically one place to the right
 ; Uses removeLast method which uses more basic functions belonging to racket
 (define (rcycle l); define function name and parameter 
   (if (null? l) ;if null return empty list
       '()
-      (append (cons (getLast l) ; Last function gives last element in list
+      (append (cons (last l) ; Last function gives last element in list
               (removeLast l); call removeLast function which return list with last element removed and then appends rest of list to the last element
                     ))))
 
