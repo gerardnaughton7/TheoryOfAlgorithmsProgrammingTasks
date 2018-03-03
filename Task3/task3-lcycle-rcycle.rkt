@@ -7,11 +7,16 @@
 ;list as input and returns the list cyclically shifted one place to the left. The second
 ;is called rcycle, and it shifts the list cyclically shifted one place to the right.
 
+;myAppend function appends one list to the end of the other
+(define (myAppend x y)
+ (if (null? x) y
+  (cons (car x) (myAppend (cdr x) y))));recursively keep adding the next element of x to the head of new list
+
 ;lcycle function that shifts the list cyclically one place to the left
 (define (lcycle l); define function name and parameter
   (if (null? l); if null return empty list
       '()
-      (append (cdr l) ;get the 2nd element onward of the list l
+      (myAppend (cdr l) ;get the 2nd element onward of the list l
               (cons (car l) ;get first element in l and create a list
                     '()))));which we will append to the previous list 
 
@@ -31,11 +36,11 @@
 (define (rcycle l); define function name and parameter 
   (if (null? l) ;if null return empty list
       '()
-      (append (cons (getLast l) ; Last function gives last element in list
+      (cons (getLast l) ; Last function gives last element in list
               (removeLast l); call removeLast function which return list with last element removed and then appends rest of list to the last element
-                    ))))
+                    )))
 
-;rcycle2 function that shifts the list cyclically one place to the right
+;rcycle2 function that shifts the list cyclically one place to the right. Uses append and reverse built in functions to make it easier to resolve
 ;This function uses the reverse function twice to remove the last element of the list 
 ; and doesnt require the removeLast function
 (define (rcycle2 l); define function name and parameter 

@@ -1,0 +1,18 @@
+#lang racket
+(define l1(list 1 2 3 4 -5 -2 3 7))
+
+(cons (combinations l1)
+      '())
+
+(define (myAdd L)
+  (for/sum ((i L))
+    i))
+
+(myAdd l1)
+(define (sub1sum l)
+  (for ([e (in-list (combinations l) )])
+    (if(= 0 (myAdd e))
+       (display e)
+       '())))
+
+(sub1sum l1)
