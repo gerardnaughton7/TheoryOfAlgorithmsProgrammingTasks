@@ -1,4 +1,4 @@
-# Task 3 Shifting lists Cyclically
+# Task 4 sublsum
 
 ## Objective
 Provided from our Lecturer Ian Mcloughlin
@@ -7,7 +7,7 @@ Provided from our Lecturer Ian Mcloughlin
 
 ## Algorithm
 
-For this task, we are to get each possible sublist combinations of the list we pass into our sub1sum function and check if its contents sums to 0. Luckily we could use the built in combinations function in racket. 
+For this task, we are to get each possible sublist combinations of the list we pass into our sublsum function and check if its contents sums to 0. Luckily we could use the built in combinations function in racket. 
 
 Once i passed in the list i would loop over each sublist provided by the combinations function. For every sublist i would add all elements together using myAdd function. And if there result was equal to 0 i would display this sublist. 
 
@@ -24,8 +24,8 @@ Code, the task4.rkt file contains comments
   1
   ))
 
-;sub1sum function
-(define (sub1sum l)
+;sublsum function
+(define (sublsum l)
   (for ([e (in-list (combinations l) )])
     (if(= 0 (myAdd e))
        (displayln e)

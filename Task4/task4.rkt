@@ -16,8 +16,8 @@
   1
   ))
 
-;sub1sum function
-(define (sub1sum l);define function and set parameters
+;sublsum function
+(define (sublsum l);define function and set parameters
   (for ([e (in-list (combinations l) )]);loop through all the combinations in the list
     (if(= 0 (myAdd e));if this sublist when added together is = 0 display this sublist
        (displayln e)
@@ -32,8 +32,8 @@
 
 ;Test
 (displayln '(List l sublists))
-(sub1sum l)
+(sublsum l)
 (displayln '(List l1 sublists))
-(sub1sum l1)
+(sublsum l1)
 (displayln '(List l2 sublists))
-(sub1sum l2)
+(sublsum l2)
