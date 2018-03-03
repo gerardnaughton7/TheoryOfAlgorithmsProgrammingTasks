@@ -1,0 +1,36 @@
+#lang racket
+
+(define l(list 1 2 3 4 0 5 0 0 0 0 0 1 1 1 1 11))
+
+(module m racket
+    (provide counter increment! display!)
+    (define counter 0)
+    (define (increment!)
+      (set! counter (add1 counter)))
+  (define (display!)
+    (counter))
+  )
+(require 'm)
+
+(define (hamming-weight l)
+  (for ([e (in-list l)]);loop through elements of list
+    (if(not(= 0 e));
+      (increment!)
+       '()))
+  (display counter)
+  );
+
+(define (hamming-weight2 l)
+  (if(not(null? l))
+     (cond
+       [(not(= 0 (car l))) (increment!)]
+       )
+     '())
+  (if(not(null? (cdr l)))
+   (hamming-weight2 (cdr l))
+   (display counter))
+  )
+
+
+(hamming-weight2 l)
+;(display count)
