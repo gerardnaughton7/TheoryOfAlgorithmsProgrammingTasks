@@ -3,70 +3,39 @@
 ## Objective
 Provided from our Lecturer Ian Mcloughlin
 
-<p><img src="images/task3.png" width="500" length="300"></p>
+<p><img src="images/task4.png" width="500" length="300"></p>
 
 ## Algorithm
 
-For this task, it sounds pretty simple and for the left cycle it is not too hard. As for the right cycle there is a bit more work involved.
+For this task, we are to get each possible sublist combinations of the list we pass into our sub1sum function and check if its contents sums to 0. Luckily we could use the built in combinations function in racket. 
 
-Left Cycle:
-Requires us to remove the start element of list and place it at the end of the list. I will do this by getting the cdr of the list and appending it to the car of the list.
-
-Right Cycle: Requires us to remove the last element of the list and place it at the front of the list. 
-
+Once i passed in the list i would loop over each sublist provided by the combinations function. For every sublist i would add all elements together using myAdd function. And if there result was equal to 0 i would display this sublist. 
 
 ## Solution
 
-Code, the task3.rkt file contains comments 
+Code, the task4.rkt file contains comments 
 
 ```
-;myAppend function
-(define (myAppend x y)
- (if (null? x) y
-  (cons (car x) (myAppend (cdr x) y))))
+; myAdd function
+(define (myAdd l)
+  (if(not(null? l))
+  (for/sum ((i l))
+    i)
+  1
+  ))
 
-;lcycle function
-(define (lcycle l)
-  (if (null? l)
-      '()
-      (myAppend (cdr l)
-              (cons (car l)  
-                    '()))))
-
-; removeLast
-(define (removeLast l)
-    (if (null? (cdr l))
-        '() 
-        (cons (car l) (removeLast (cdr l))))) 
-
-; getLast 
-(define (getLast l)
-  (cond ((null? (cdr l)) (car l))
-        (else (getLast (cdr l)))))
-
-; rcycle
-(define (rcycle l)
-  (if (null? l) 
-      '()
-      (cons (getLast l) 
-              (removeLast l)
-                    )))
-
-; rcycle2 
-(define (rcycle2 l) 
-  (if (null? l)
-      '()
-      (append (cons (last l)
-              (reverse(cdr(reverse l))))
-                    )))
+;sub1sum function
+(define (sub1sum l)
+  (for ([e (in-list (combinations l) )])
+    (if(= 0 (myAdd e))
+       (displayln e)
+       '())))
 
 ```
 ## Conclusion
 
-For what seemed like a relatively easy task it quickly changed when only allowed use the basic functions. Took me a while to get it working but I got there in the end. I created a second rcycle function which uses racket functions that make the job alot easier, such as append and last.
+Once reading over the docs in Racket.lang.org on combinations i was ready to tackle this task. I found this Task alot easier than the previous Task3 but this was most likely because i did not have to generate my own combinations function from scratch.
 
 ## References
 
-https://stackoverflow.com/questions/13175152/scheme-getting-last-element-in-list
-
-https://stackoverflow.com/questions/5006750/removing-last-element-of-a-listscheme
+https://docs.racket-lang.org/reference/pairs.html
