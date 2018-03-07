@@ -8,65 +8,45 @@ Provided from our Lecturer Ian Mcloughlin
 
 ## Algorithm
 
-For this task, we were asked to get the hamming-weight of a list. Find all elements of the list that are not zero. I created 2 function hamming-weight and hamming-weight2. 
+For this task, we were asked to get the hamming-weight of a list. Find all elements of the list that are not zero.
 
 Hamming-weight:
-Uses a loop to check each element and increments a counter if element is not 0
+For this function i concentrated on the fact that we are usually calculating the hamming-weight at bit level and only dealing with list of 1 and 0s . So i decided to recurse through the list and simply add all the elements.
 
-
-Hamming-weight2:
-Uses recursion to check each element and increment a counter if element is not 0
-
-To keep track the counter. I used a module which allowed me to gain access to the counter. Using mutator functions increment and reset to modify the counter.
+Hamming-weight2
+From reviewing the question asked and because it was kind of vague i created a second function which would check for all zero elements and out put the number of non-zero elements. 
 
 ## Solution
 
 Code, the task5.rkt file contains comments for this code
 
 ```
-;module m
-(module m racket
-    (provide counter increment! reset!)
-    (define counter 0)
-    (define (increment!)
-      (set! counter (add1 counter))
-      )
-    (define (reset!)
-      (set! counter 0))
-  )
-  
-(require 'm)
 
-;Hamming-weight function 
+;hamming-weight function
 (define (hamming-weight l)
-  (for ([e (in-list l)])
-    (if(not(= 0 e))
-      (increment!)
-       '()))
-  (displayln counter)
-  (reset!)
+  (if(null? l)
+   0
+  (+ (car l) (hamming-weight (cdr l)))
   )
+)
 
-;Hamming-weight2 function
+;Hammin-weight2 function
 (define (hamming-weight2 l)
-  (if(not(null? l))
-     (cond
-       [(not(= 0 (car l))) (increment!)]
-       )
-     '())
-  (if(null? (cdr l))
-   (displayln counter)
-   (hamming-weight2 (cdr l)))
-  (reset!);
+  (if(null? l)
+   0
+  (if(= (car l) 0)
+        (hamming-weight2 (cdr l))
+        (+ 1 (hamming-weight2 (cdr l)))
+        )
   )
+)
 
 ```
 ## Conclusion
 
-Was interesting to read up on how these mathamatical function/algorithms(Hamming-weight(1954)) dating back to 1899 are still in the back bone of everyday computing. The hamming-weight being used in particular for information theory, coding theory and cryptography.
+Was interesting to read up on how these mathamatical function/algorithms(Hamming-weight(1954)) dating back to 1899 are still in the back bone of everyday computing. The hamming-weight being used in particular for information theory, coding theory and cryptography. Was also a learning curve on knowing what questions to ask.
 
 ## References
 
 https://en.wikipedia.org/wiki/Hamming_weight
 
-https://docs.racket-lang.org/guide/module-set.html
