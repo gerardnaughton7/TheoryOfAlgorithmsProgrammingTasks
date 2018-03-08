@@ -8,61 +8,33 @@ Provided from our Lecturer Ian Mcloughlin
 
 ## Algorithm
 
-For this task, we were asked to get the hamming-weight of a list. Find all elements of the list that are not zero. I created 2 function hamming-weight and hamming-weight2. 
+For this task, we were asked to calculate the hamming distance of 2 lists. This means return the number of positions where the 2 list are different.
 
-Hamming-weight:
-Because the hamming-weight deals with
-
-To keep track the counter. I used a module which allowed me to gain access to the counter. Using mutator functions increment and reset to modify the counter.
+Hamming-distance:
+From following the example give to us by our lecturer i took the idea that inputed lists to the function would be of equal size. 
+In my function presuming that both lists are of same size i checked to see if one of the lists was null. if null i return 0 and if not i check the car(first element) of each list and see if they are the same. If equal i call the hamming-distance on the cdr(remaining of list without first element) on both list. if they are different i add 1 and call hamming-distance again on the cdr of both lists. Recursively checking the 2 lists against each other and outputing the number of positions they differ.
 
 ## Solution
 
-Code, the task5.rkt file contains comments for this code
+Code, the task6.rkt file contains comments for this code
 
 ```
-;module m
-(module m racket
-    (provide counter increment! reset!)
-    (define counter 0)
-    (define (increment!)
-      (set! counter (add1 counter))
-      )
-    (define (reset!)
-      (set! counter 0))
+;Hamming-distance function
+(define (hamming-distance l1 l2)
+  (if(null? l1)
+   0
+  (if(= (car l1) (car l2))
+        (hamming-distance (cdr l1) (cdr l2))
+        (+ 1 (hamming-distance (cdr l1) (cdr l2))) 
+        )
   )
-  
-(require 'm)
-
-;Hamming-weight function 
-(define (hamming-weight l)
-  (for ([e (in-list l)])
-    (if(not(= 0 e))
-      (increment!)
-       '()))
-  (displayln counter)
-  (reset!)
-  )
-
-;Hamming-weight2 function
-(define (hamming-weight2 l)
-  (if(not(null? l))
-     (cond
-       [(not(= 0 (car l))) (increment!)]
-       )
-     '())
-  (if(null? (cdr l))
-   (displayln counter)
-   (hamming-weight2 (cdr l)))
-  (reset!);
-  )
+)
 
 ```
 ## Conclusion
 
-Was interesting to read up on how these mathamatical function/algorithms(Hamming-weight(1954)) dating back to 1899 are still in the back bone of everyday computing. The hamming-weight being used in particular for information theory, coding theory and cryptography.
+From completing task5 Hamming-weight i found this task alot easier. By using my hamming-weight2 function i was able to modify if by simply changing the second if statement and check if the car of each list is equal and changing the parameters to hamming-distance function to take 2 lists. From reading up the hamming distance online it says "the Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different" which is why my function only covers the lists of equal length. 
 
 ## References
 
-https://en.wikipedia.org/wiki/Hamming_weight
-
-https://docs.racket-lang.org/guide/module-set.html
+https://en.wikipedia.org/wiki/Hamming_distance
