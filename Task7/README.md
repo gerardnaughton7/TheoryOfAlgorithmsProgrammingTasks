@@ -1,4 +1,4 @@
-# Task 7 Hamming-Distance
+# Task 7 maj
 
 ## Objective
 Provided from our Lecturer Ian Mcloughlin
@@ -20,22 +20,26 @@ Once list 1 reaches null it should return a list of elements containing the majo
 Code, the task7.rkt file contains comments for this code
 
 ```
-;Hamming-distance function
-(define (hamming-distance l1 l2)
-  (if(null? l1)
-   0
-  (if(= (car l1) (car l2))
-        (hamming-distance (cdr l1) (cdr l2))
-        (+ 1 (hamming-distance (cdr l1) (cdr l2))) 
+;maj function
+(define (maj x y z)
+  (if(null? x)
+   '()
+   (if(= (car x) (car y))
+        (cons (car x) (maj (cdr x) (cdr y) (cdr z)))
+        (if(= (car x) (car z))
+           (cons (car x) (maj (cdr x) (cdr y) (cdr z)))
+           (cons (car z) (maj (cdr x) (cdr y) (cdr z)))
         )
-  )
+   )
+ )
 )
 
 ```
 ## Conclusion
 
-From completing task5 Hamming-weight i found this task alot easier. By using my hamming-weight2 function i was able to modify if by simply changing the second if statement and check if the car of each list is equal and changing the parameters to hamming-distance function to take 2 lists. From reading up the hamming distance online it says "the Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different" which is why my function only covers the lists of equal length. 
+Took me a while to figure out which elements would need to be checked to figure out what was the majority element would be but realising that there was only 3 lists and 2 types(0 and 1). I figured out it would only take 2 if statements.
+
 
 ## References
 
-https://en.wikipedia.org/wiki/Hamming_distance
+https://github.com/theory-of-algorithms/problems-scheme
