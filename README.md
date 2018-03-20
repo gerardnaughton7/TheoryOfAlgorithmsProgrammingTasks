@@ -29,7 +29,7 @@ DrRacket is a graphical environment for developing programs using the Racket pro
 
 <p><img src="Images/Tasks.PNG" width="500" length="300"></p>
 <p><img src="Images/Tasks2.PNG" width="500" length="300"></p>
-<p><img src="Images/Task3.PNG" width="500" length="300"></p>
+<p><img src="Images/Tasks3.PNG" width="500" length="300"></p>
 
 ## References
 

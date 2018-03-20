@@ -8,12 +8,12 @@ Provided from our Lecturer Ian Mcloughlin
 
 ## Algorithm
 
-For this task, we were asked to create a function called maj, that takes 3 equal length lists containing 1s and 0s. Our function will then compare each element of each list at the same position and return a list conatining the majority number in each position.  
+For this task, we were asked to create a function called chse, that takes 3 equal length lists containing 1s and 0s. Our function will then check each element in x to see if it is equal to either 1 or 0. if it is equal to 1 we will enter the corresponding element we are checking to the element in y and place that element into our new list. if it is not equal to 1 we will enter the corresponding element we are checking to the element in z and place that element into our new list. And then finally output the resulting list. 
 
-Maj:
-From following the example given to us by our lecturer, inputed lists to the function would be of equal size. 
-In my function presuming that both lists are of same size (Step1) i check to see if one of the lists was null at the start. if null i return 0 and if not i do another (step2) if statement and check the car(first element) of the first 2 lists and see if they are the same. If equal i (step3) cons(place element into new list) the first element of list 1 and cons it to the result of calling the maj function on the remaining list( the cdr of the remain 3 lists). Allowing recursion. If they do not match i do another (step4) if statement and check if the car(first element) of the 1st and 3rd lists are equal. If they are equal i repeat step3. If they do not match i repeat step 3 once again except i cons the car(first element) of the 3rd list to the function call of maj. 
-Once list 1 reaches null it should return a list of elements containing the majority element in each position for the 3 lists.
+Chse:
+From following the example given to us by our lecturer, inputed lists to the function would be of equal size and made up of 1s and 0s. 
+In my function we take in the 3 list x y and z. I then check to see if list x is null at the start. if null i return 0 and if not i do another if statement and check if the first element(car x) in x is equal to 1. If it is i get the first element in y(car y) using the cons function and cons it to the result of calling the chse function on the cdr(list minus the first element) of the 3 lists. If it does not equal 1 I get the first element in z(car z) using the cons function and cons it to the result of calling the chse function on the cdr(list minus the first element) of the 3 lists. 
+Once list x reaches null it should return a list of elements containing the y and z elements in there correct positions..
 
 ## Solution
 
@@ -32,7 +32,7 @@ Once list 1 reaches null it should return a list of elements containing the majo
 ```
 ## Conclusion
 
-Took me a while to figure out which elements would need to be checked to figure out what was the majority element would be but realising that there was only 3 lists and 2 types(0 and 1). I figured out it would only take 2 if statements.
+After completing task 7 i found this task very easy and only needed to slightly modify the maj function i previously made.
 
 
 ## References
