@@ -7,12 +7,12 @@
 ; containing only 0’s and 1’s. It should return a list containing a 1
 ; where two or more of x, y and z contain 1’s, and 0 otherwise.
 
-;Example: (maj (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
-;Answer: '(0 0 0 1 0 1 1 1) 
+; Example: (maj (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
+; Answer: '(0 0 0 1 0 1 1 1) 
 
-;I wrote this function on the idea through the example given was that all lists would be
-;of same size. If this was not the case u would have to modify this function to rectify that.
-;My function can work with not just ones and zero but other numbers too.
+; I wrote this function on the idea through the example given was that all lists would be
+; of same size and elements of each lists would only contain 0s and 1s. If this was not the case u would have
+; to modify this function to rectify that.
 
 ;maj function
 (define (maj x y z)
@@ -29,7 +29,7 @@
 )
 ;Testing
 
-;define 3 list
+;define 6 list
 (define x (list 0 0 0 0 1 1 1 1))
 (define y (list 0 0 1 1 0 0 1 1))
 (define z (list 0 1 0 1 0 1 0 1))
