@@ -25,11 +25,11 @@ DrRacket is a graphical environment for developing programs using the Racket pro
 
 * To use my solutions download my repo at https://github.com/gerardnaughton7/TheoryOfAlgorithmsProgrammingTasks and open my .rkt files in Dr Racket and press Crtl r to run the solution. 
 
-## Here is our List of Tasks from out Lecturer Ian McLoughlin
+## Here is our List of Tasks from our Lecturer Ian McLoughlin
 
 <p><img src="Images/Tasks.PNG" width="500" length="300"></p>
 <p><img src="Images/Tasks2.PNG" width="500" length="300"></p>
-<p><img src="Images/Tasks3.PNG" width="500" length="300"></p>
+<p><img src="Images/Task3.PNG" width="500" length="300"></p>
 
 ## References
 
