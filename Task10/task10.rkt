@@ -28,7 +28,7 @@
   (if(null? x);check if x list is equal to null(if list equal to null return 0) 
   0
   (+ (square(- (car x) (car y))) (lstq (cdr x) (cdr y)));else add the result of(squaring the car x- car y(first element of each list)
-  )                                                     ;to the recursion call of lstq on the remainding elements in the list(ie the cdr of x and y)
+  )                                                     ;to the recursion call of lstq on the remaining elements in the list(ie the cdr of x and y)
 )  
 ;Testing
 
