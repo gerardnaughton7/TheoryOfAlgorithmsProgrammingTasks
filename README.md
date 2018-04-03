@@ -1,5 +1,7 @@
 # TheoryOfAlgorithmsProgrammingTasks
-Programming Tasks to be completed as part of course Grade. These Programming Tasks are written in Racket using functional programming.
+Programming Tasks to be completed as part of course Grade. These Programming Tasks are written in Racket using functional programming. 
+
+Each Task has its own seperate folder with readMe, images folder , gitignore file and rkt file for that task. I have also placed each rkt file for each task at the root of this repository for easier correction.
 
 ## What is Functional Programming
 
